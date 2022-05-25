@@ -2,7 +2,7 @@
   "name": "Flyte-Wingman",
   "displayName": "Flyte-Wingman",
   "description": "Easily and register flyte workflows from your vscode editor",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.50.0"
   },

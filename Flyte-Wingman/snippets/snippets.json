@@ -44,5 +44,18 @@
         "body":[
             "map_task(${2:mappable_task}, concurrency=${3:4}, min_success=${4:1.0})(${5:parameter_name}=${6:list_argument})"
         ]
+    },
+    "task_reference": {
+        "prefix": "@reference_task",
+        "body": [
+            "@reference_task(",
+            "\tproject=\"${1}\",",
+            "\tdomain=\"${2}\",",
+            "\tname=\"${3}\",",
+            "\tversion=\"${4}\",",
+            ")",
+            "def ${5:ref_task}(${6}) -> ${7}:",
+            "\t..."
+        ]
     }
 }
