@@ -1,0 +1,48 @@
+{    
+    "start basic task" : { 
+      "prefix": "@task", 
+      "body": [  
+        "@task",
+        "def $1:",
+        "\t${0:pass}"
+      ],      
+      "description": "start a basic task",
+      "scope": "python"
+    },
+    "start cached task" : {
+        "prefix": "@task",
+        "body": [
+            "@task(cache=True, cache_version=\"${2:1.0}\")",
+            "def $1:",
+            "\t${0:pass}"
+        ]
+    },
+    "start sidecar task": {
+        "prefix": "@task",
+        "body": [
+            "@task(",
+            "\ttask_config=Pod(",
+            "\t\tpod_spec=${2:generate_pod_spec_for_task()}, primary_container_name=${3:container_name}",
+            "\t),",
+            "\trequests=${4:container_requests},",
+            "\tlimits=${4:container_requests},",
+            ")",
+            "def $1:",
+            "\t${0:pass}"
+        ]
+    },
+    "start workflow": {
+        "prefix": "@workflow",
+        "body":[
+            "@workflow",
+            "def $1:",
+            "\t${0:pass}"
+        ]
+    },
+    "map task": {
+        "prefix": "map_task",
+        "body":[
+            "map_task(${2:mappable_task}, concurrency=${3:4}, min_success=${4:1.0})(${5:parameter_name}=${6:list_argument})"
+        ]
+    }
+}

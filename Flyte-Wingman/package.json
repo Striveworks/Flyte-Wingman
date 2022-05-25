@@ -1,0 +1,53 @@
+{
+  "name": "Flyte-Wingman",
+  "displayName": "Flyte-Wingman",
+  "description": "Easily and register flyte workflows from your vscode editor",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.50.0"
+  },
+  "categories": [
+    "Snippets",
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:Flyte-Wingman.configure",
+    "onCommand:Flyte-Wingman.bootstrapWorkflow",
+    "onCommand:Flyte-Wingman.registerLocalWorkflow"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "Flyte-Wingman.configure",
+        "title": "Configure Wingman"
+      },
+      {
+        "command": "Flyte-Wingman.bootstrapWorkflow",
+        "title": "Initialize Workflow"
+      },
+      {
+        "command": "Flyte-Wingman.registerLocalWorkflow",
+        "title": "Register Workflow"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "python",
+        "path": "./snippets/snippets.json"
+      }
+    ]
+  },
+  "scripts": {
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.50.0",
+    "esbuild": "^0.14.29"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "^1.5.9",
+    "google-protobuf": "^3.20.0-rc.2",
+    "js-yaml": "^4.1.0",
+    "tar": "^6.1.11"
+  }
+}
