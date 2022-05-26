@@ -1,6 +1,7 @@
 # Flyte-Wingman
 
-This is the repository for the Flyte-Wingman vs-code extension.
+This is the repository for the Flyte-Wingman vscode extension. 
+This extension can be used to easily create, serialize, and register python flytekit based workflows from vscode.
 
 ## Running the extension
 
